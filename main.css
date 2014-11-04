@@ -36,3 +36,9 @@ a {
 #nav-bar a:hover {
     color: #A8A8A8;
 }
+
+img {
+	margin: 40px 0px 0px 0px;
+    border: 7px solid white;
+    border-radius: 20px;
+}
