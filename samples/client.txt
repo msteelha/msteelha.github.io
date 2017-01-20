@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<title>SafeRide | Request A Ride</title>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/client.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body>
+<h1>Safe Ride</h1>
+<h5>Request A Ride</h5>
+<div class="container">
+  <!--rider request input form-->
+  <div class="col-md-6">
+    <form role="form" id="myForm" action="/_submitClientInfo">
+    <div class="form-group">
+      <label for="fname">Name:</label>
+      <input type="text" id="fname" name="fname" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="studentid">Student ID:</label>
+      <input type="text" id="studentid" name="studentid" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="phonenum">Phone number:</label>
+      <input type="text" id="phonenum" name="phonenum" class="form-control" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" >
+    </div>
+    <label for="riders">Number of riders:</label>
+    <div class="radio" id="radio">
+      <label class="radio-inline"><input type="radio" name="optradio" value="1">1 Rider</label>
+      <label class="radio-inline"><input type="radio" name="optradio" value="2">2 Riders</label>
+      <label class="radio-inline"><input type="radio" name="optradio" value="3">3 Riders</label>
+    </div>  <br>
+    <div class="form-group">
+      <label for="time">Pickup time:</label>
+      <input type="text" id="time" name="time" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="pickup">Pickup location:</label>
+      <input type="text" id="pickup" name="pickup" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="dropoff">Dropoff location:</label>
+      <input type="text" id="dropoff" name="dropoff" class="form-control">
+    </div>
+
+    <!---<input id="myBtn" type="button" onclick="myFunction()" value="Submit form">-->
+    <input id="myBtn" name"clientSetting" type="button" value="addClient" class="btn btn-success">
+</form>
+
+  </div>
+  <!--empty column-->
+  <div class="col-md-1"></div>
+  <!--info about saferide-->
+  <div class="col-md-5">
+  <div class="panel panel-success">
+  <div class="panel-heading">Information</div>
+  <div class="panel-body">
+    <p>
+    The University of Oregon's Safe Ride program offers free, safe, comfortable rides for all students, faculty, and staff of the university as an alternative to walking alone or in small groups at night.
+    <p><br>
+    <b>Hours of Operation:</b>
+    <p><i>Fall/Winter Term:</i> Sunday-Thursday 6pm-12am, Friday-Saturday 6pm-2am
+    <p><i>Spring Term:</i> Sunday-Thursday 7pm-12am, Friday-Saturday 7pm-2am
+    <p><i>Summer Term:</i> Sunday-Thursday 9pm-12am, Friday-Saturday 9pm-2am
+    <p><br>
+    <p>For any queries or changes to your ride, call <b>541-346-7433</b>
+  </div>
+</div>
+
+<script type="text/javascript">
+
+    $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+
+  $(document).ready(function(){
+      $("#myBtn").click(function(){
+          //entered variables
+          var fname = document.getElementById("fname").value;
+          var studentid = document.getElementById("studentid").value;
+          var phonenum = document.getElementById("phonenum").value;
+          var riders = $('#radio input:radio:checked').val();
+          var time = document.getElementById("time").value;
+          var pickup = document.getElementById("pickup").value;
+          var dropoff = document.getElementById("dropoff").value;
+
+          //regex patterns
+          //var regexfname = new RegExp("^[\\p{L} .'-]+$");
+          //var regexstudentid = new RegExp("95[0-9]{7}");
+          //var regexphonenum = new RegExp("[0-9]{10}");
+          //var regexpickup = new RegExp("/^[\w\-\s]+$/");
+          //var regexdropoff = new RegExp("/^[\w\-\s]+$/");*/
+
+          /*if !(regexstudentid.test(studentid)) {
+            alert("Please enter a valid Student ID");
+          } else if !(regexphonenum.test(phonenum)) {
+            alert("Please enter a valid phone number");
+          } else if !(regexfname.test(fname)) {
+            alert("Please enter a valid name");
+          } else if !(regexpickup.test(pickup)) {
+            alert("Please enter a valid pickup location");
+          } else if !(regexdropoff.test(dropoff)) {
+            alert("Please enter a valid dropoff location");
+          }*/
+
+          //check for empty
+          if (fname == "") {
+            alert("Please enter a name");
+          } else if (studentid == "") {
+            alert("Please enter your Student ID");
+          } else if (phonenum == "") {
+            alert("Please enter a phone number");
+          } else if (riders == undefined) {
+            alert("Please select a number of riders");
+          } else if (time == "") {
+            alert("Please enter a pickup time");
+          } else if (pickup == "") {
+            alert("Please enter a pickup location");
+          } else if (dropoff == "") {
+            alert("Please enter a dropoff location")
+          } else {
+          $.getJSON($SCRIPT_ROOT + '/_submitClientInfo',
+                  { fname: fname, studentid: studentid, phonenum: phonenum,
+                    riders: riders, time: time, pickup: pickup, dropoff: dropoff, clientSetting: document.getElementById("myBtn").value},
+                  function(data) {
+                     var result = data.result;
+                     obj = JSON.parse(result);
+                     alert("Got a response: " +  result);
+                  }); // End of the call to getJSON
+          }
+      });  // End of the function to be called when field changes
+     });   // end of what we do on document ready
+
+</script>
+
+  <!--function myFunction() {
+    document.getElementById("myForm").submit();
+}-->
+</script>
+
+</div>
+</body>
+</html>

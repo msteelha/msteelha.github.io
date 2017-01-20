@@ -1,0 +1,319 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<title>Admin</title>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/styling.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<!--NAV BAR-->	
+<nav class="navbar navbar-inverse navbar-static-top">
+  <div class="container">
+   	<a class="navbar-brand" href="#">Team Builder</a>
+   	<ul class="nav navbar-nav">
+        <li><a href="/admin">My Forms</a></li>
+        <li class="active"><a href="/adminCreate">Create Form</a></li>
+      </ul>
+   	<form class="navbar-form navbar-right" action="/_adminSettings" method="get">
+  		<button name="setting" type="submit" value="logout" class="btn btn-default">Logout</button>
+	</form>
+  </div>
+</nav>
+
+<div class="container">
+<div class="row">
+  <!--LEFT SIDE - CREATE NEW FORM-->
+  <div class="col-md-7">
+  	<h1><small>Create New Form</small></h1>
+  	<br>
+
+    <div class="form-group">
+    <label for="class-name">Class Name:</label>
+    <input type="text" class="form-control" id="class-name">
+    </div>
+
+    <div>
+      <label for="class-name">Questions:</label>
+    	<div class="input-group">
+        <input type="text" class="form-control" aria-label="..." placeholder="Name Entry">
+        <div class="input-group-btn">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="selection" id="weight1">Weighting </span><span class="caret"></span></button>
+          <ul class="dropdown-menu dropdown-menu-right" id="dropdown1">
+            <li><a href="#">0</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a></li>
+            <li><a href="#">10</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="input-group">
+        <input type="text" class="form-control" aria-label="..." placeholder="Student ID # Entry">
+        <div class="input-group-btn">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="selection" id="weight2">Weighting </span><span class="caret"></span></button>
+          <ul class="dropdown-menu dropdown-menu-right" id="dropdown2">
+            <li><a href="#">0</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a></li>
+            <li><a href="#">10</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="input-group">
+        <input type="text" class="form-control" aria-label="..." placeholder="Email Entry">
+        <div class="input-group-btn">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="selection" id="weight3">Weighting </span><span class="caret"></span></button>
+          <ul class="dropdown-menu dropdown-menu-right" id="dropdown3">
+            <li><a href="#">0</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a></li>
+            <li><a href="#">10</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="input-group">
+        <input type="text" class="form-control" aria-label="..." placeholder="Availability Selection">
+        <div class="input-group-btn">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="selection" id="weight4">Weighting </span><span class="caret"></span></button>
+          <ul class="dropdown-menu dropdown-menu-right" id="dropdown4">
+            <li><a href="#">0</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a></li>
+            <li><a href="#">10</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="input-group">
+        <input type="text" class="form-control" aria-label="..." placeholder="Course Grades Selection">
+        <div class="input-group-btn">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="selection" id="weight5">Weighting </span><span class="caret"></span></button>
+          <ul class="dropdown-menu dropdown-menu-right" id="dropdown5">
+            <li><a href="#">0</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a></li>
+            <li><a href="#">10</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="input-group">
+        <input type="text" class="form-control" aria-label="..." placeholder="Language and System Experience Selection">
+        <div class="input-group-btn">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="selection" id="weight6">Weighting </span><span class="caret"></span></button>
+          <ul class="dropdown-menu dropdown-menu-right" id="dropdown3">
+            <li><a href="#">0</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a></li>
+            <li><a href="#">10</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="input-group">
+        <input type="text" class="form-control" aria-label="..." placeholder="Strengths Selection">
+        <div class="input-group-btn">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="selection" id="weight7">Weighting </span><span class="caret"></span></button>
+          <ul class="dropdown-menu dropdown-menu-right" id="dropdown7">
+            <li><a href="#">0</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a></li>
+            <li><a href="#">10</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="input-group">
+        <input type="text" class="form-control" aria-label="..." placeholder="Weeknesses Selection">
+        <div class="input-group-btn">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="selection" id="weight8">Weighting </span><span class="caret"></span></button>
+          <ul class="dropdown-menu dropdown-menu-right" id="dropdown8">
+            <li><a href="#">0</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a></li>
+            <li><a href="#">10</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="input-group">
+        <input type="text" class="form-control" aria-label="..." placeholder="Preffered Role Selection">
+        <div class="input-group-btn">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="selection" id="weight9">Weighting </span><span class="caret"></span></button>
+          <ul class="dropdown-menu dropdown-menu-right" id="dropdown9">
+            <li><a href="#">0</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a></li>
+            <li><a href="#">10</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="input-group">
+        <input type="text" class="form-control" aria-label="..." placeholder="Prefferred Teammate Entry">
+        <div class="input-group-btn">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="selection" id="weight10">Weighting </span><span class="caret"></span></button>
+          <ul class="dropdown-menu dropdown-menu-right" id="dropdown10">
+            <li><a href="#">0</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a></li>
+            <li><a href="#">10</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <button id="btnContinue" type="button" class="btn btn-info">Continue</button>
+    </div>
+
+  </div>	
+</div>
+</div>
+
+
+<script type="text/javascript">
+
+  $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+
+
+  $(document).ready(function(){
+
+    //updates value in dropdowns for weightings
+    $(".dropdown-menu").on('click', 'li a', function(){
+      $(this).parents(".input-group-btn").find('.selection').text($(this).text());
+      $(this).parents(".input-group-btn").find('.selection').val($(this).text());
+
+    });
+
+    $("#btnContinue").click(function(){
+
+      //fields entered
+      var className = document.getElementById("class-name").value;
+      //TODO: for loop which assigns weight 0 if null (when question not used)
+      var q1weight = document.getElementById("weight1").value;
+      var q2weight = document.getElementById("weight2").value;
+      var q3weight = document.getElementById("weight3").value;
+      var q4weight = document.getElementById("weight4").value;
+      var q5weight = document.getElementById("weight5").value;
+      var q6weight = document.getElementById("weight6").value;
+      var q7weight = document.getElementById("weight7").value;
+      var q8weight = document.getElementById("weight8").value;
+      var q9weight = document.getElementById("weight9").value;
+      var q10weight = document.getElementById("weight10").value;
+      var weights = [q1weight,q2weight,q3weight,q4weight,q5weight,q6weight,q7weight,q8weight,q9weight,q10weight];
+      var preJson = {setting:'addClass', className:className, classId:'123',priorityList:weights};
+      alert(className);
+
+      //send to backend
+      $.getJSON($SCRIPT_ROOT + '/_classDBSettings',
+        {aThing: JSON.stringify(preJson)},
+        function(data) {
+          var result = data.result;
+          alert(result);
+          //obj = JSON.parse(result);
+          //alert("Got a response: " + result);
+        });
+
+    });
+  });
+
+</script>
+
+</body>
+</html>
